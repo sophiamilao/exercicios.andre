@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dra. Sophia Milão | Cirurgia Plástica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="page-shell">
+
+        <!-- PAINEL DA FACHADA DA CLÍNICA -->
+        <section class="visual-panel">
+
+            <div class="visual-overlay"></div>
+
+            <div class="brand brand-light">
+
+                <div class="brand-mark">
+                    <span>SM</span>
+                </div>
+
+                <div>
+                    <span class="brand-name">Dra. Sophia Milão</span>
+                    <span class="brand-subtitle">CIRURGIA PLÁSTICA</span>
+                </div>
+
+            </div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    BELEZA · HARMONIA · CONFIANÇA
+                </span>
+
+                <h1>
+                    Sua beleza,<br>
+                    <em>do seu jeito.</em>
+                </h1>
+
+                <p>
+                    Atendimento individualizado, acolhimento e
+                    cuidado em cada etapa da sua jornada.
+                </p>
+
+            </div>
+
+            <div class="visual-footer">
+                <span class="small-line"></span>
+                <span>Elegância em cada detalhe.</span>
+            </div>
+
+        </section>
+
+
+        <!-- PAINEL DE LOGIN -->
+        <section class="form-panel">
+
+            <div class="mobile-brand brand">
+
+                <div class="brand-mark">
+                    <span>SM</span>
+                </div>
+
+                <div>
+                    <span class="brand-name">Dra. Sophia Milão</span>
+                    <span class="brand-subtitle">CIRURGIA PLÁSTICA</span>
+                </div>
+
+            </div>
+
+            <div class="form-content">
+
+                <header class="form-heading">
+
+                    <span class="eyebrow">ÁREA DO PACIENTE</span>
+
+                    <h2 id="formTitle">Bem-vinda de volta</h2>
+
+                    <p id="formSubtitle">
+                        Entre na sua conta para continuar.
+                    </p>
+
+                </header>
+
+
+                <!-- ABAS -->
+                <div class="tab-switch">
+
+                    <button
+                        class="tab active"
+                        id="loginTab"
+                        type="button">
+
+                        Entrar
+
+                    </button>
+
+                    <button
+                        class="tab"
+                        id="registerTab"
+                        type="button">
+
+                        Criar cadastro
+
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN -->
+                <form id="loginForm" novalidate>
+
+                    <label for="loginEmail">E-mail</label>
+
+                    <input
+                        id="loginEmail"
+                        type="email"
+                        placeholder="voce@exemplo.com"
+                        autocomplete="email"
+                        required>
+
+
+                    <label for="loginPassword">Senha</label>
+
+                    <div class="password-box">
+
+                        <input
+                            id="loginPassword"
+                            type="password"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                            minlength="8">
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-password="loginPassword">
+
+                            Mostrar
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="check-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Manter conectado</span>
+                        </label>
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            id="forgotPassword">
+
+                            Esqueci minha senha
+
+                        </button>
+
+                    </div>
+
+
+                    <button class="primary-button" type="submit">
+                        Entrar na minha conta <span>→</span>
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="loginMessage"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                    <p class="switch-note">
+                        Ainda não tem cadastro?
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            data-switch="register">
+
+                            Criar conta
+
+                        </button>
+                    </p>
+
+                </form>
+
+
+                <!-- CADASTRO -->
+                <form id="registerForm" class="hidden" novalidate>
+
+                    <label for="fullName">Nome completo</label>
+
+                    <input
+                        id="fullName"
+                        type="text"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        required
+                        minlength="3">
+
+
+                    <div class="field-row">
+
+                        <div class="field">
+
+                            <label for="birthDate">
+                                Data de nascimento
+                            </label>
+
+                            <input
+                                id="birthDate"
+                                type="date"
+                                autocomplete="bday"
+                                required>
+
+                        </div>
+
+                        <div class="field">
+
+                            <label for="phone">Celular</label>
+
+                            <input
+                                id="phone"
+                                type="tel"
+                                placeholder="(41) 99999-9999"
+                                autocomplete="tel"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <label for="registerEmail">E-mail</label>
+
+                    <input
+                        id="registerEmail"
+                        type="email"
+                        placeholder="voce@exemplo.com"
+                        autocomplete="email"
+                        required>
+
+
+                    <label for="interest">Principal interesse</label>
+
+                    <select id="interest" required>
+
+                        <option value="">Selecione uma opção</option>
+                        <option value="consulta">Consulta inicial</option>
+                        <option value="cirurgia">Cirurgia plástica</option>
+                        <option value="estetica">Procedimento estético</option>
+                        <option value="retorno">Retorno médico</option>
+                        <option value="outro">Outro assunto</option>
+
+                    </select>
+
+
+                    <label for="registerPassword">Criar senha</label>
+
+                    <div class="password-box">
+
+                        <input
+                            id="registerPassword"
+                            type="password"
+                            placeholder="Mínimo de 8 caracteres"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required>
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-password="registerPassword">
+
+                            Mostrar
+
+                        </button>
+
+                    </div>
+
+
+                    <label for="confirmPassword">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        id="confirmPassword"
+                        type="password"
+                        placeholder="Digite a senha novamente"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required>
+
+
+                    <label class="check-label consent">
+
+                        <input id="privacyConsent" type="checkbox" required>
+
+                        <span>
+                            Concordo com o uso dos meus dados para
+                            gestão do atendimento, conforme a política
+                            de privacidade.
+                        </span>
+
+                    </label>
+
+
+                    <button class="primary-button" type="submit">
+                        Criar meu cadastro <span>→</span>
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="registerMessage"
+                        role="status"
+                        aria-live="polite">
+                    </p>
+
+                    <p class="switch-note">
+                        Já tem uma conta?
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            data-switch="login">
+
+                            Entrar
+
+                        </button>
+                    </p>
+
+                </form>
+
+
+                <div class="security-note">
+                    <span>✧</span>
+                    Cuidado, confiança e atenção a cada detalhe.
+                </div>
+
+                <p class="demo-notice">
+                    Sistema demonstrativo para fins de estudo.
+                </p>
+
+            </div>
+
+            <footer class="page-footer">
+                © <span id="year"></span> Dra. Sophia Milão · Cirurgia Plástica
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,781 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --ink: #342b2c;
+    --muted: #8d7d7b;
+    --rose: #a96f75;
+    --rose-dark: #87535b;
+    --rose-pale: #f7ece9;
+    --cream: #fbf8f5;
+    --line: #eadfda;
+    --white: #ffffff;
+
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ========================================
+   LAYOUT PRINCIPAL
+======================================== */
+
+.page-shell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+
+    margin: 0;
+    background: var(--cream);
+}
+
+
+/* ========================================
+   PAINEL ESQUERDO
+======================================== */
+
+.visual-panel {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    min-height: 100vh;
+
+    padding: 42px clamp(25px, 4vw, 65px);
+
+    overflow: hidden;
+    color: var(--white);
+
+}
+
+
+/* Camada escura sobre a imagem */
+
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(169, 111, 117, 0.28),
+            rgba(135, 83, 91, 0.42)
+        ),
+        url("WhatsApp\ Image\ 2026-10-27\ at\ 10.44.40.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ========================================
+   LOGO
+======================================== */
+
+.brand {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-light {
+    color: var(--white);
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+
+    width: 53px;
+    height: 53px;
+    flex-shrink: 0;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.brand-mark svg {
+    width: 39px;
+    height: 39px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.45;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.brand-name {
+    display: block;
+
+    font-family: var(--serif);
+    font-size: clamp(18px, 1.6vw, 24px);
+    letter-spacing: 0.01em;
+}
+
+.brand-subtitle {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 9px;
+    letter-spacing: 0.25em;
+}
+
+
+/* ========================================
+   TEXTO DE APRESENTAÇÃO
+======================================== */
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+
+    max-width: 470px;
+    margin: auto 0;
+    padding: 65px 0;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: var(--rose);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.visual-panel .eyebrow {
+    color: #f6d9d2;
+}
+
+.hero-copy h1 {
+    margin: 20px 0;
+
+    font-family: var(--serif);
+    font-size: clamp(42px, 4.6vw, 72px);
+    line-height: 1.08;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.hero-copy h1 em {
+    color: #f0cfc8;
+    font-weight: 500;
+}
+
+.hero-copy p {
+    max-width: 360px;
+
+    color: #f8eeeb;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.visual-footer {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #f4dfda;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.small-line {
+    width: 30px;
+    height: 1px;
+    background: #f4dfda;
+}
+
+
+/* ========================================
+   PAINEL DIREITO
+======================================== */
+
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+    min-height: 100vh;
+
+    padding: 35px clamp(24px, 5vw, 75px);
+
+    background: var(--cream);
+}
+
+.form-content {
+    width: 100%;
+    max-width: 440px;
+}
+
+
+/* ========================================
+   CABEÇALHO DOS FORMULÁRIOS
+======================================== */
+
+.form-heading {
+    margin-bottom: 27px;
+}
+
+.form-heading h2 {
+    margin: 14px 0 10px;
+
+    font-family: var(--serif);
+    font-size: clamp(29px, 2.6vw, 37px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.form-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   ABAS
+======================================== */
+
+.tab-switch {
+    display: flex;
+    gap: 5px;
+
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 5px;
+
+    background: #f0e8e4;
+    border-radius: 12px;
+}
+
+.tab {
+    flex: 1;
+
+    padding: 13px 8px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+    color: #897775;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.tab.active {
+    background: var(--white);
+    color: var(--rose-dark);
+
+    box-shadow: 0 3px 12px rgba(86, 58, 50, 0.06);
+}
+
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+.form-view {
+    width: 100%;
+    animation: fadeIn 0.25s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-view > label:not(.check-label),
+.field label {
+    display: block;
+
+    margin: 15px 0 8px;
+
+    color: #514344;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.field-row .field label {
+    margin-top: 0;
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+input:not([type="checkbox"]),
+select {
+    width: 100%;
+    min-width: 0;
+    min-height: 45px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    outline: none;
+    background: #fffdfc;
+    color: var(--ink);
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: #b4a7a3;
+}
+
+input:focus,
+select:focus {
+    border-color: #bf8b8f;
+
+    box-shadow: 0 0 0 3px rgba(183, 124, 124, 0.12);
+}
+
+
+/* ========================================
+   CAMPO COM ÍCONE
+======================================== */
+
+.input-wrap {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.input-wrap input {
+    padding-right: 75px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    z-index: 1;
+
+    color: #b08a8b;
+    font-size: 14px;
+}
+
+.input-wrap:has(.input-icon) input {
+    padding-left: 39px;
+}
+
+
+/* ========================================
+   MOSTRAR SENHA
+======================================== */
+
+.show-password {
+    position: absolute;
+    right: 12px;
+
+    padding: 5px;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--rose-dark);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   OPÇÕES DO LOGIN
+======================================== */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin: 16px 0 23px;
+}
+
+.check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    color: #877977;
+    font-size: 10px;
+    line-height: 1.55;
+
+    cursor: pointer;
+}
+
+.check-label input {
+    flex: 0 0 auto;
+
+    margin: 2px 0 0;
+
+    accent-color: var(--rose);
+}
+
+.text-button {
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--rose-dark);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   BOTÃO PRINCIPAL
+======================================== */
+
+.primary-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 18px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: var(--rose);
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(169, 111, 117, 0.15);
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.primary-button span {
+    font-size: 18px;
+    line-height: 10px;
+}
+
+.primary-button:hover {
+    background: var(--rose-dark);
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   MENSAGENS DE STATUS
+======================================== */
+
+.form-message {
+    margin: 12px 0 0;
+
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.form-message.success {
+    color: #327653;
+}
+
+.form-message.error {
+    color: #b44444;
+}
+
+
+/* ========================================
+   LINK ENTRE LOGIN E CADASTRO
+======================================== */
+
+.switch-note {
+    margin: 20px 0 0;
+
+    text-align: center;
+    color: #998b88;
+
+    font-size: 11px;
+}
+
+.switch-note .text-button {
+    margin-left: 4px;
+}
+
+
+/* ========================================
+   CAMPOS EM DUAS COLUNAS
+======================================== */
+
+.field-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+
+    margin-bottom: 13px;
+}
+
+.field {
+    min-width: 0;
+}
+
+#registerForm > input {
+    margin-bottom: 1px;
+}
+
+#registerForm .field-row input,
+#registerForm .field-row select {
+    padding: 12px 10px;
+    font-size: 11px;
+}
+
+
+/* ========================================
+   CONSENTIMENTO
+======================================== */
+
+.consent {
+    margin-top: 18px;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.security-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 28px;
+
+    color: #9c8a86;
+    font-size: 10px;
+    text-align: center;
+}
+
+.security-note span {
+    color: var(--rose);
+    font-size: 15px;
+}
+
+.demo-notice {
+    margin-top: 12px;
+
+    color: #b0a29e;
+    font-size: 9px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.page-footer {
+    width: 100%;
+    padding-top: 24px;
+
+    color: #b0a29e;
+    font-size: 9px;
+    text-align: center;
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .visual-panel {
+        padding: 30px;
+    }
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    .hero-copy h1 {
+        font-size: 48px;
+    }
+
+    .form-panel {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+.mobile-brand {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .page-shell {
+        display: block;
+        width: 100%;
+    }
+
+    .visual-panel {
+        display: none;
+    }
+
+    .form-panel {
+        justify-content: flex-start;
+
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 25px 22px 20px;
+    }
+
+    .mobile-brand {
+        display: flex;
+        justify-content: center;
+
+        margin: 0 auto 28px;
+
+        color: var(--rose-dark);
+    }
+
+    .mobile-brand .brand-mark {
+        width: 47px;
+        height: 47px;
+    }
+
+    .mobile-brand .brand-mark svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .mobile-brand .brand-name {
+        font-size: 20px;
+    }
+
+    .form-content {
+        max-width: 460px;
+    }
+
+    .form-heading h2 {
+        font-size: 32px;
+    }
+
+    .page-footer {
+        margin-top: auto;
+        padding-top: 28px;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 390px) {
+
+    .field-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .form-options {
+        align-items: flex-start;
+    }
+
+    .form-panel {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+}
